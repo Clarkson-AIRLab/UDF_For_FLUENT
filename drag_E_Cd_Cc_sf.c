@@ -94,7 +94,7 @@ DEFINE_DPM_DRAG(drag, Re, p)
 			 /* printf("drag_force=%g\n", drag_force);*/
 			 return (drag_force);
 		 }
-		 else if (1 < Re <= 5)
+		 else if (1 < Re && Re <= 5)
 		 {
 			 drag_force = 18.0 / Cc * (1 + 0.0916*Re);
 			 /*printf("drag_force=%g\n", drag_force);*/
@@ -103,7 +103,7 @@ DEFINE_DPM_DRAG(drag, Re, p)
 		 else
 			 /* Note: suggested valid range 10 < Re < 1000 */
 		 {
-			 drag_force = 18.0 / Cc * (1 + 0.158*pow(Re, 2 / 3));
+			 drag_force = 18.0 / Cc * (1 + 0.158*pow(Re, 0.66667));
 			 /* printf("drag_force=%g\n", drag_force);*/
 			 return (drag_force);
 		 }
