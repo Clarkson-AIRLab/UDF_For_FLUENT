@@ -6,3 +6,4 @@ Notice that:
 3. It seems like creating the udf files in FLUENT can only work for academic version, not wroking for education version.
 4. "drag_E_Cd_Cc_sf.c" is the udf file we recently modified for correcting drag force beyond Stokes regime and can consider the shape factor. If your simulations involve the particle Re change from <0.1 to <1000, feel free to try this udf file. 
 5. For using the shape factor in "drag_E_Cd_Cc_sf.c" udf file, the shape factor named as "sf" in code, the drag coefficient is considered the equations from Fluent and added Cc correction into it. If you want to consider the shape factor, you need to change the value of shape factor in the file and build a new udf library with the new shape factor in FLUENT. 
+6. The udf file is used for operating pressure set at 0, if your operating pressure is not 0 you need to modify the code for Cc equation. Again, it is necessary to check if the code is calculating the exact value you want. 
